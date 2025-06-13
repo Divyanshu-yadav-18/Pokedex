@@ -43,7 +43,46 @@ class _HomePageState extends State<HomePage> {
               ? Center(child: CircularProgressIndicator())
               : GridView.count(
                 crossAxisCount: 2,
-                children: pokeHub!.pokemon!.map((pok) => Card()).toList(),
+                children:
+                    pokeHub!.pokemon!
+                        .map(
+                          (pok) => Padding(
+                            padding: const EdgeInsets.all(5.0),
+                            child: InkWell(
+                              onTap: () => {},
+                              child: Card(
+                                elevation: 4.0,
+                                child: Column(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceEvenly,
+                                  children: <Widget>[
+                                    Container(
+                                      height: 100.00,
+                                      width: 100.00,
+                                      decoration: BoxDecoration(
+                                        image: DecorationImage(
+                                          image: NetworkImage(
+                                            pok.img ??
+                                                'https://via.placeholder.com/150',
+                                          ),
+                                          fit: BoxFit.cover,
+                                        ),
+                                      ),
+                                    ),
+                                    Text(
+                                      pok.name!,
+                                      style: TextStyle(
+                                        fontSize: 20,
+                                        fontWeight: FontWeight.w600,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ),
+                        )
+                        .toList(),
               ),
 
       drawer: Drawer(),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'package:pokedex/Screens/datail_card.dart';
 import 'dart:convert';
 
 import 'package:pokedex/data/pokemon_model.dart';
@@ -49,34 +50,47 @@ class _HomePageState extends State<HomePage> {
                           (pok) => Padding(
                             padding: const EdgeInsets.all(5.0),
                             child: InkWell(
-                              onTap: () => {},
-                              child: Card(
-                                elevation: 4.0,
-                                child: Column(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceEvenly,
-                                  children: <Widget>[
-                                    Container(
-                                      height: 100.00,
-                                      width: 100.00,
-                                      decoration: BoxDecoration(
-                                        image: DecorationImage(
-                                          image: NetworkImage(
-                                            pok.img ??
-                                                'https://via.placeholder.com/150',
+                              onTap:
+                                  () => {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder:
+                                            (context) =>
+                                                DatailCard(pokemon: pok),
+                                      ),
+                                    ),
+                                  },
+                              child: Hero(
+                                tag: pok.img!,
+                                child: Card(
+                                  elevation: 4.0,
+                                  child: Column(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceEvenly,
+                                    children: <Widget>[
+                                      Container(
+                                        height: 100.00,
+                                        width: 100.00,
+                                        decoration: BoxDecoration(
+                                          image: DecorationImage(
+                                            image: NetworkImage(
+                                              pok.img ??
+                                                  'https://via.placeholder.com/150',
+                                            ),
+                                            fit: BoxFit.cover,
                                           ),
-                                          fit: BoxFit.cover,
                                         ),
                                       ),
-                                    ),
-                                    Text(
-                                      pok.name!,
-                                      style: TextStyle(
-                                        fontSize: 20,
-                                        fontWeight: FontWeight.w600,
+                                      Text(
+                                        pok.name!,
+                                        style: TextStyle(
+                                          fontSize: 20,
+                                          fontWeight: FontWeight.w600,
+                                        ),
                                       ),
-                                    ),
-                                  ],
+                                    ],
+                                  ),
                                 ),
                               ),
                             ),

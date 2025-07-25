@@ -9,14 +9,11 @@ A cross-platform Pokedex app built with Flutter.
 
 Displays Pokémon details, images, and stats fetched from an API.
 
-![Main Pokémon list UI](assets/demo/demoImg2.jpg)
-_Main Pokémon list UI_
-
-![Pokémon detail page (Charizard)](assets/demo/demoImg1.jpg)
-_Pokémon detail page (Charizard)_
-
-![Pokémon detail page with evolution info (Dragonair)](assets/demo/demoImg3.jpg)
-_Pokémon detail page with evolution info (Dragonair)_
+<p align="center">
+  <img src="assets/demo/demoImg1.jpg" alt="Main Pokémon list UI" width="250"/>
+  <img src="assets/demo/demoImg2.jpg" alt="Pokémon detail page (Charizard)" width="250"/>
+  <img src="assets/demo/demoImg3.jpg" alt="Pokémon detail page with evolution info (Dragonair)" width="250"/>
+</p>
 
 ---
 
